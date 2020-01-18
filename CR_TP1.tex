@@ -10,16 +10,24 @@
 \begin{document}
 \maketitle
 \section{La fonction Transformée de Fourrier Discrète}
+\noindent
+Données : \\
+On échantillone la fonction entre $a$  = -50 secondes et $b$ = 50 secondes, avec un total de $N$ = 32768 échntillons.\\
 La période d'échantillonage est : \( T_e = \dfrac{(b-a)}{N} = \dfrac{1}{327,68} \) \\
 La fréquence d'échantillonage est : \( f_e = \dfrac{1}{T_e} = 327,68 \) \\
 Intervalle de fréquence
 L'intervalle entre deux échantillons en fréquence est de fe/N = 1/100.
 
 
-\begin{figure}
-\includegraphics[scale=0.4]{tf_fct3.jpg}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.35]{tf_fct3.jpg}
 \caption{Le spectre de la fonction 3}
-\includegraphics[scale=0.4]{fct6.jpg}
+\end{center}
+\end{figure}
+
+\begin{figure}[!h]
+\includegraphics[scale=0.35]{fct6.jpg}
 \caption{La fonction 6 après transformée de fourrier inverse}
 \end{figure}
 
@@ -29,7 +37,7 @@ L'intervalle entre deux échantillons en fréquence est de fe/N = 1/100.
 \textit(Calcul théorique)
 
 \textit{Extraire s1 ou s2 : }\\
-Pour extraire s1 ou s2, il faut filtré la reprensentation fréquentielle de d, puis récupérer le signal temporel ainsi obtenu.
+Pour extraire s1 ou s2, il faut démoduler le signal c(t) en le multipliant par $cos(2 \pi f t)$, puis on applique un filtre passe-bas pour récupérer s1 ou s2 sur le signal ainsi obtenu.
 
 \textit{fréquence dépendante : }\\
 Il faut faire attention à ne pas prendre des fréquences trop proches de celles de s1 ou s2.
@@ -37,5 +45,17 @@ Il faut faire attention à ne pas prendre des fréquences trop proches de celles
 
 
 \section{Echantillonnage et aliasing	}
+
+
+\section{Filtrage}
+
+\section{Restauration d'image par filtre de Wiener}
+Le but de cette partie est d'atténuer la dégradation (ici le flou) d'une image, par filtrage inverse. On va pour cela utiliser le filtre de Wiener : 
+\[
+	W(u,v) = \frac{1}{H(u,v)} * \frac{|H(u,v)|^2}{|H(u,v)|^2+\dfrac{P_b(u,v)}{P_i (u,v)}}	
+\]
+
+où $H(u,v)$ modélise la translation à l'origine du flou, et $P_i(u,v)$ ainsi que $P_b(u,v)$ sont deux spectres de puissance. $P_i(u,v)$ sera déterminé à partir d'une image de référence $i_r(x,y)$ et $P_B(u,v)$ est approximé par le spectre de puissance du bruit $b(x,y)$ qui apparaît lors du passage de $d_R(x,y)$ (l'image dégradée) à $d_Q(x,y)$ qui n'est codée que sur des nombres entiers.
+
 
 \end{document}
