@@ -89,10 +89,12 @@ Fonction ;\\
 \newpage
 \bigskip
 \section{Transmission par modulation d'amplitude}
+Dans cette partie, on s'intéresse à deux signaux s1 et s2. On suppose que l'on doit les transmettre. Pour cela on effectue une modulation des signaux comme suit :\\
+$c(t) = s1(t)*cos(2 \pi f_1 t)+ s2(t)*cos(2 \pi f_2 t)$\\
 \textit(Calcul théorique)
 
 \textit{Comment extraire $s1(t)$ ou $s2(t)$ ?}\\
-Pour extraire s1 ou s2 \textit{(figure~\ref{s1s2})}, il faut démoduler le signal c(t) \textit{(figure~\ref{c})} en le multipliant par $cos(2 \pi f t)$. On obtient alors le signal $d(t)$ \textit{(figure~\ref{d})} puis on applique un filtre passe-bas pour récupérer s1 ou s2 sur le signal ainsi obtenu \textit{(figure~\ref{s1demod})}.
+Pour extraire s1 ou s2 \textit{(figure~\ref{s1s2})}, il faut démoduler le signal c(t) \textit{(figure~\ref{c})} en le multipliant par $cos(2 \pi f_x t)$.(Où $f_x$ correspond à la fréquence de modulation du signal que l'on souhaite démoduler) On calcul ensuite le spectre du ce nouveau signal : $d(t)$ \textit{(figure~\ref{d})} puis on applique un filtre pour récupérer le spectre de $s_x$. On calcul ensuite la transformée inverse pour récupérer le vrai signal \textit{(figure~\ref{s1demod})}.
 
 \begin{figure}[h]
 \begin{center}
@@ -141,7 +143,7 @@ On va filtrer des images avec le filtre suivant
 \begin{figure}[H]	\begin{center}
 \includegraphics[scale=0.35]{girafe_originale.png}
 \caption{L'image originale}
-\label{s1demod}
+\label{XX}
 \end{center}	\end{figure}
 
 
@@ -149,19 +151,19 @@ On va filtrer des images avec le filtre suivant
 \begin{figure}[H]	\begin{center}
 \includegraphics[scale=0.35]{imfiltree_k=0.1.jpg}
 \caption{Filtrage avec K=0.1}
-\label{s1demod}
+\label{XX}
 \end{center}	\end{figure}
 
 \begin{figure}[H]	\begin{center}
 \includegraphics[scale=0.35]{imfiltree_k=0.01.jpg}
 \caption{Filtrage avec K=0.01}
-\label{s1demod}
+\label{XX}
 \end{center}	\end{figure}
 
 \begin{figure}[H]	\begin{center}
 \includegraphics[scale=0.35]{imfiltree_k=0.001.jpg}
 \caption{Filtrage avec K=0.001}
-\label{s1demod}
+\label{XX}
 \end{center}	\end{figure}
 
 \subsection{Application}
@@ -172,7 +174,7 @@ On veut diviser par 4 la dimension de l'image "girafeIV.jpg". Pour cela, on cons
 \begin{figure}[H]	\begin{center}
 \includegraphics[scale=0.35]{girafe_reduite.jpg}
 \caption{L'image réduite en prenant un pixel sur 4 toutes les 4 lignes}
-\label{s1demod}
+\label{XX}
 \end{center}	\end{figure}
 
 
@@ -181,7 +183,7 @@ On constate une forte dégradation de l'image observée. Pour pallier à cette d
 \begin{figure}[H]	\begin{center}
 \includegraphics[scale=0.35]{imfiltree_reduite.jpg}
 \caption{Image filtrée réduite	}
-\label{s1demod}
+\label{XX}
 \end{center}	\end{figure}
 
 
@@ -191,21 +193,21 @@ Le but de cette partie est d'atténuer la dégradation (ici le flou) d'une image
 	W(u,v) = \frac{1}{H(u,v)} * \frac{|H(u,v)|^2}{|H(u,v)|^2+\dfrac{P_b(u,v)}{P_i (u,v)}}	
 \]
 
-où $H(u,v)$ modélise la translation à l'origine du flou, et $P_i(u,v)$ ainsi que $P_b(u,v)$ sont deux spectres de puissance. O$P_i(u,v)$ sera déterminé à partir d'une image de référence $i_r(x,y)$ et $P_B(u,v)$ est approximé par le spectre de puissance du bruit $b(x,y)$ qui apparaît lors du passage de $d_R(x,y)$ (l'image dégradée) à $d_Q(x,y)$ qui n'est codée que sur des nombres entiers.
+où $H(u,v)$ modélise la translation à l'origine du flou, et $P_i(u,v)$ ainsi que $P_b(u,v)$ sont deux spectres de puissance. $P_i(u,v)$ sera déterminé à partir d'une image de référence $i_r(x,y)$ et $P_B(u,v)$ est approximé par le spectre de puissance du bruit $b(x,y)$ qui apparaît lors du passage de $d_R(x,y)$ (l'image de référence produit de convolution le filtre $H$) à $|d_R(x,y)|$.
 
-Pour la dégradation, on modélise une translation de 16 pixels sur 3 de hauteur.
+Pour la dégradation, on modélise une translation de 17 pixels sur 3 de hauteur.
 
 
 \begin{figure}[H]	\begin{center}
 \includegraphics[scale=0.35]{im_floue.jpg}
 \caption{L'image originale, floue}
-\label{s1demod}
+\label{XX}
 \end{center}	\end{figure}
 
 \begin{figure}[H]	\begin{center}
 \includegraphics[scale=0.35]{im_restauree.jpg}
 \caption{L'image restaurée}
-\label{s1demod}
+\label{XX}
 \end{center}	\end{figure}
 
 On peut donc maintenant lire le texte : 
