@@ -134,6 +134,26 @@ Pour la démodulation, il faut faire attention à ne pas prendre des fréquence 
 
 \section{Échantillonnage et aliasing	}
 
+Ici, on va s'intéresser au signal suivant :
+$g_f(t) = s1(t)*sin(2 \pi f t)$\\
+On va échantillonner ce signal pour différente valeur de f.\\
+Le signal s1 utilisé ici est le même que dans la partie précédente(fourni par l'enseignant).
+Par la multiplication du signal par le sinus, on obtient une transformée de fourrier imaginaire. Le spectre de s1 est dédoublé en 2 signaux inverses. Un positif centré en -f et un négatif centré en f.
+
+\begin{figure}[H]	\begin{center}
+\includegraphics[scale=0.6]{aliasing1.png}
+\caption{Transformée réel de s1(gauche) et Transformée imaginaire de $g_{100}$(droite)}
+\label{XX}
+\end{center}	\end{figure}
+
+Dans l'application développé en classe, notre affichage fréquentiel se fait sur l'intervalle [-163.84;163.83]. Par conséquent, lorsque la fréquence f se rapproche ou dépasse cette l'une des bornes de cette plage, notre affichage n'est plus valide.
+
+\begin{figure}[H]	\begin{center}
+\includegraphics[scale=0.6]{aliasing2.png}
+\caption{Transformée de $g_{300}$ par l'application(gauche) et Transformée de $g_{300}$ théorique(droite)}
+\label{XX}
+\end{center}	\end{figure}
+
 \section{Filtrage}
 
 On va filtrer des images avec le filtre suivant
