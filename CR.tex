@@ -156,10 +156,12 @@ Dans l'application développé en classe, notre affichage fréquentiel se fait s
 
 \section{Filtrage}
 
-On va filtrer des images avec le filtre suivant
+On va filtrer des images avec le filtre fréquentiel suivant
 \[
 	H(u,v) = exp(-K((u)^2+(v)^2))
 \]
+On charge l'image, on en déduit la transformée de Fourrier. Puis on applique le filtre pour chaque pixels. On récupère, pour finir, la transformée inverse de ce résultat.
+
 \begin{figure}[H]	\begin{center}
 \includegraphics[scale=0.35]{girafe_originale.png}
 \caption{L'image originale}
