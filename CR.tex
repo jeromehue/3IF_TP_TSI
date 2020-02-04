@@ -91,10 +91,9 @@ Fonction ;\\
 \section{Transmission par modulation d'amplitude}
 Dans cette partie, on s'intéresse à deux signaux s1 et s2. On suppose que l'on doit les transmettre. Pour cela on effectue une modulation des signaux comme suit :\\
 $c(t) = s1(t)*cos(2 \pi f_1 t)+ s2(t)*cos(2 \pi f_2 t)$\\
-\textit(Calcul théorique)
 
 \textit{Comment extraire $s1(t)$ ou $s2(t)$ ?}\\
-Pour extraire s1 ou s2 \textit{(figure~\ref{s1s2})}, il faut démoduler le signal c(t) \textit{(figure~\ref{c})} en le multipliant par $cos(2 \pi f_x t)$.(Où $f_x$ correspond à la fréquence de modulation du signal que l'on souhaite démoduler) On calcul ensuite le spectre du ce nouveau signal : $d(t)$ \textit{(figure~\ref{d})} puis on applique un filtre pour récupérer le spectre de $s_x$. On calcul ensuite la transformée inverse pour récupérer le vrai signal \textit{(figure~\ref{s1demod})}.
+Pour extraire s1 ou s2 \textit{(figure \ref{s1s2})}, il faut démoduler le signal c(t) \textit{(figure~\ref{c})} en le multipliant par $cos(2 \pi f_x t)$.(Où $f_x$ correspond à la fréquence de modulation du signal que l'on souhaite démoduler) On calcul ensuite le spectre du ce nouveau signal : $d(t)$ \textit{(figure~\ref{d})} puis on applique un filtre pour récupérer le spectre de $s_x$. On calcul ensuite la transformée inverse pour récupérer le vrai signal \textit{(figure~\ref{s1demod})}.
 
 \begin{figure}[h]
 \begin{center}
